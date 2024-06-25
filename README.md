@@ -1,5 +1,35 @@
-# Vue 3 + TypeScript + Vite
+# My Vue App
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is a basic Vue.js application setup using Vite for development and build processes.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+### Install npm packages
+
+```bash
+npm install
+```
+
+### Start a development server
+
+```bash
+npm run dev
+```
+
+This command will start Vite in development mode.
+
+### Testing
+
+To run tests using Jest:
+
+```bash
+npm test
+```
+
+### Build
+
+To build the app for production:
+
+```bash
+npm run build
+```
+
+This command will run TypeScript compiler (vue-tsc) first and then build the app using Vite.
