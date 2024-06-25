@@ -15,9 +15,9 @@ export default class TreeStore {
 
       if (!this.childrenMap.has(item.parent)) {
         this.childrenMap.set(item.parent, []);
-      } else {
-        this.childrenMap.get(item.parent).push(item);
       }
+
+      this.childrenMap.get(item.parent).push(item);
     });
   }
 
@@ -56,8 +56,9 @@ export default class TreeStore {
 
     while (currentItem && currentItem.parent !== 'root') {
       currentItem = this.getItem(currentItem.parent as number);
+
       if (currentItem) {
-        parents.unshift(currentItem);
+        parents.push(currentItem);
       }
     }
 
