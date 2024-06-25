@@ -24,8 +24,9 @@ export default class TreeStore {
   private getChildrenRecursive (parentId: number, result: TreeItem[]) {
     const children = this.getChildren(parentId);
 
+    result.push(...children);
+
     for (const child of children) {
-      result.push(child);
       this.getChildrenRecursive(child.id, result);
     }
   }

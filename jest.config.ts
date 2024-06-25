@@ -1,24 +1,19 @@
-import type { Config } from '@jest/types';
+import type {Config} from 'jest';
 
-const config: Config.InitialOptions = {
+const config: Config = {
   preset: 'ts-jest',
-  testEnvironment: 'jsdom',
-  moduleFileExtensions: ['js', 'ts', 'vue'],
   transform: {
-    '^.+\\.vue$': 'vue-jest',
-    '^.+\\.(ts|tsx)$': 'ts-jest',
+    '^.+\\.tsx?$': 'ts-jest',
   },
+  clearMocks: true,
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
   testMatch: [
-    '**/__tests__/**/*.spec.[jt]s?(x)',
+    '**/__tests__/**/*.test.ts',
   ],
-  globals: {
-    'ts-jest': {
-      tsconfig: 'tsconfig.json',
-    },
-  },
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  testEnvironment: "jsdom",
 };
 
 export default config;
